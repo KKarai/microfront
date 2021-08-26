@@ -1,0 +1,22 @@
+{
+  "name": "admin",
+  "version": "0.0.1",
+  "repository": "https://github.com/KKarai/microfront.git",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "lerna run --scope @admin/* --parallel start",
+    "build": "lerna run --scope @admin/* build",
+    "clean": "lerna run --scope @admin/* --parallel clean"
+  },
+  "workspaces": {
+    "packages": [
+      "app1",
+      "app2",
+      "host"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
