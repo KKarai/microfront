@@ -13,7 +13,8 @@
     "packages": [
       "app1",
       "app2",
-      "host"
+      "host",
+      "shared-app"
     ]
   },
   "devDependencies": {

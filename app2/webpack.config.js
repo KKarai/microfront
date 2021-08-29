@@ -14,7 +14,8 @@ module.exports = {
   },
 
   devServer: {
-    port: 3001,
+    port: 3002,
+    historyApiFallback: true,
   },
 
   module: {
@@ -37,6 +38,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "app2",
       filename: "remoteEntry.js",
+      remotes: {
+        shared: "shared_app@http://localhost:3003/remoteEntry.js",
+      },
       exposes: {
         "./App": "./src/App",
       },
@@ -53,7 +57,7 @@ module.exports = {
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
-        }
+        },
       },
     }),
     new HtmlWebPackPlugin({

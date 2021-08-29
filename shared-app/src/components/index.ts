@@ -1,3 +1,3 @@
 export { Box } from "./Box";
-export { Typography } from "./Typograpy";
+export { Typography } from "./Typography";
 export { UglyButton } from "./UglyButton";

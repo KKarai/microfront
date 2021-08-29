@@ -1,5 +1,5 @@
 {
-  "name": "@admin/shared-app",
+  "name": "@admin/shared_app",
   "version": "0.0.1",
   "scripts": {
     "start": "webpack-cli serve",

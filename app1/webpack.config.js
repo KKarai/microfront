@@ -14,7 +14,8 @@ module.exports = {
   },
 
   devServer: {
-    port: 3002,
+    port: 3001,
+    historyApiFallback: true,
   },
 
   module: {
@@ -40,6 +41,9 @@ module.exports = {
       exposes: {
         "./App": "./src/App",
       },
+      remotes: {
+        shared: "shared_app@http://localhost:3003/remoteEntry.js",
+      },
       shared: {
         ...deps,
         react: {
@@ -53,7 +57,7 @@ module.exports = {
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
-        }
+        },
       },
     }),
     new HtmlWebPackPlugin({

@@ -14,6 +14,7 @@ module.exports = {
   },
 
   devServer: {
+    historyApiFallback: true,
     port: 3000,
   },
 
@@ -38,7 +39,8 @@ module.exports = {
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        app2: "app2@http://localhost:3001/remoteEntry.js",
+        app1: "app1@http://localhost:3001/remoteEntry.js",
+        app2: "app2@http://localhost:3002/remoteEntry.js",
       },
       shared: {
         ...deps,

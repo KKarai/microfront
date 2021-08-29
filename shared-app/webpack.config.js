@@ -14,7 +14,8 @@ module.exports = {
   },
 
   devServer: {
-    port: 3004,
+    port: 3003,
+    historyApiFallback: true,
   },
 
   module: {
@@ -35,10 +36,12 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "shared-app",
+      name: "shared_app",
       filename: "remoteEntry.js",
       exposes: {
-        "./App": "./src/App",
+        "./Box": "./src/components/Box",
+        "./UglyButton": "./src/components/UglyButton",
+        "./Typography": "./src/components/Typography",
       },
       shared: {
         ...deps,
@@ -53,7 +56,7 @@ module.exports = {
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
-        }
+        },
       },
     }),
     new HtmlWebPackPlugin({

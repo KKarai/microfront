@@ -1,4 +1,4 @@
 {
-  "packages": ["app1", "app2", "host"],
+  "packages": ["app1", "app2", "host", "shared-app"],
   "version": "0.0.1"
 }
