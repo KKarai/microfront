@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import { Layout, Menu, Typography } from "antd";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import ErrorBoundary from "./ErrorBoundary";
 import "antd/dist/antd.css";
 import "./app.css";
 
@@ -44,14 +45,18 @@ export const App = () => {
                   <Title level={3}>Home</Title>
                 </Route>
                 <Route path="/app1">
-                  <React.Suspense fallback="Loading Button">
-                    <RemoteApp1 />
-                  </React.Suspense>
+                  <ErrorBoundary>
+                    <React.Suspense fallback="Loading Button">
+                      <RemoteApp1 />
+                    </React.Suspense>
+                  </ErrorBoundary>
                 </Route>
                 <Route path="/app2">
-                  <React.Suspense fallback="Loading Button">
-                    <RemoteApp2 />
-                  </React.Suspense>
+                  <ErrorBoundary>
+                    <React.Suspense fallback="Loading Button">
+                      <RemoteApp2 />
+                    </React.Suspense>
+                  </ErrorBoundary>
                 </Route>
               </Switch>
             </Content>
